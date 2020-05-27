@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
 }
@@ -35,6 +36,24 @@ img {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+=======
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  flex: 100%;
+}
+
+
+.images img {
+  margin: 10px;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
+  max-width: 200px;
+  height: 300px; 
+  object-fit: cover;
+  display: block;
+>>>>>>> ef17cf460c5f847de724dd9c58948f34dc1f1e69
 }
 
 /* Base Styles
