@@ -3,7 +3,7 @@ const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=20&clien
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const loadingImage = document.querySelector('#loadingImage');
-const imageSection = document.querySelector('.images');
+const imageSection = document.querySelector('.grid');
 
 loadingImage.style.display = 'none';
 

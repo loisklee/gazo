@@ -1,9 +1,40 @@
-.images {
-  column-count: 3;
+body {
+  margin: 0;
 }
 
 img {
-  width: 100%;
+  width: 95%;
+  display: block;
+  object-fit: cover;
+  max-height: 200px;
+  margin: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px){
+  img {
+    min-height: 37em;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 950px){
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  img {
+    min-height: 25em;
+  }
+}
+
+@media (min-width: 950px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Base Styles
