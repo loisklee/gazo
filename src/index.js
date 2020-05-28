@@ -1,4 +1,5 @@
 import { createClient } from 'pexels';
+
 const client = createClient(process.env.API_KEY);
 // please see email for contents of .env file!
 
@@ -52,6 +53,9 @@ function displayImages(images) {
   for (const i in images) {
     const imageElement = document.createElement('img');
     imageElement.src = images[i].src.large;
+    imageElement.setAttribute('class', 'myImg');
+    imageElement.alt = `Photographer: ${images[i].photographer}`;
+    imageElement.id = images[i].id;
     pictureList.push(imageElement);
   };
 
@@ -61,6 +65,9 @@ function displayImages(images) {
     imageSection.appendChild(pictureList[i]);
   }
 }
+
+/* PAGINATION */
+
 
 next.addEventListener("click", () => {
   page == pictureList.length - 10 ? (page = 0) : (page += 10);
@@ -94,3 +101,33 @@ last.addEventListener("click", () => {
     imageSection.appendChild(pictureList[i]);
   }
 });
+
+/* MODAL */
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+document.addEventListener('click', function (event) {
+
+	if (event.target.matches('img.myImg')) {
+    var img = document.getElementById(event.target.id);
+
+      modal.style.display = "block";
+      modalImg.src = img.src;    
+      modalImg.alt = img.alt;
+      captionText.innerHTML = img.alt;
+      
+  }
+
+	if (event.target.matches('.close')) {
+      // Get the <span> element that closes the modal
+      // When the user clicks on <span> (x), close the modal
+        modal.style.display = "none";
+  }
+
+}, false);
+
