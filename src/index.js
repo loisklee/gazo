@@ -131,3 +131,28 @@ document.addEventListener('click', function (event) {
 
 }, false);
 
+
+/* Hover */
+
+document.addEventListener('mouseover', function(event) {
+  // code from mouseover hover function goes here
+	if (event.target.matches('img.myImg')) {
+    var e = document.getElementById(event.target.id);
+      e.style.opacity = "0.7";
+      e.style.cursor = "pointer";
+
+      // reset the color after a short delay
+      // setTimeout(function() {
+      //   e.style.opacity = "1.0";
+      // }, 500);
+  }
+});
+
+document.addEventListener('mouseout', function(event) {
+  // code from mouseover hover function goes here
+	if (event.target.matches('img.myImg')) {
+    var e = document.getElementById(event.target.id);
+      e.style.opacity = "1.0";
+      e.style.cursor = "none";
+  }
+});
