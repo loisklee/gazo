@@ -1,4 +1,5 @@
-const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=30&client_id=${process.env.APP_API_KEY}`;
+import { createClient } from 'pexels';
+const client = createClient(process.env.API_KEY);
 // please see email for contents of .env file!
 
 const first = document.querySelector('.first');
@@ -34,24 +35,24 @@ function searchStart() {
 }
 
 function search(searchTerm) {
-    let url = `${API_URL}&query=${searchTerm}`;
-    return fetch(url)
-        .then(response => response.json())
-        .then(result => {
-            return result.results;
+  let query = searchTerm;
+  return client.photos.search({ query, per_page: 50 })  
+        .then(photos => {
+          console.log(photos.photos);
+            return photos.photos;
         }
     );
 }
-
 
 let pictureList = [];
 let page = 0;
 
 
 function displayImages(images) {
+  console.log(images)
   for (const i in images) {
     const imageElement = document.createElement('img');
-    imageElement.src = images[i].urls.regular;
+    imageElement.src = images[i].src.large;
     pictureList.push(imageElement);
   };
 

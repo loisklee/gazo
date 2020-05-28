@@ -4,9 +4,9 @@
 
 [x] All images should be about a specific theme or based on a specific word
 
-[ ] Retrieve a list of at least 50 images and display them as thumbnails on a page
+[x] Retrieve a list of at least 50 images and display them as thumbnails on a page
 
-[ ] Paginate thumbnails by 10 thumbnails per page
+[x] Paginate thumbnails by 10 thumbnails per page
 
 [ ] When clicking on an image it should display in a modal.
 

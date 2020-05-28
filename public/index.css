@@ -27,16 +27,13 @@ img {
 
 @media only screen and (max-width: 700px){
   img {
-    min-height: 37em;
+    min-height: 25em;
   }
 }
 
 @media (min-width: 700px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  img {
-    min-height: 25em;
   }
 }
 
