@@ -1,5 +1,14 @@
-body {
-  margin: 0;
+#loadingImage{
+  width: auto;
+  min-height:  30em!important; 
+  align-items: center;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+  text-align: center;
 }
 
 img {
@@ -33,10 +42,10 @@ img {
 
 @media (min-width: 1150px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
   img {
-    min-height: 17em;
+    min-height: 15em;
   }
 }
 
