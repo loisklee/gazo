@@ -1,11 +1,18 @@
-const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=${process.env.APP_API_KEY}`;
+const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=30&client_id=${process.env.APP_API_KEY}`;
 // please see email for contents of .env file!
+
+const first = document.querySelector('.first');
+const next = document.querySelector('.next');
+const previous = document.querySelector('.previous');
+const last = document.querySelector('.last');
+
+
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const loadingImage = document.querySelector('#loadingImage');
 const imageSection = document.querySelector('.grid');
 
-loadingImage.style.display = 'none';
+loadingImage.style.display = 'block';
 
 form.addEventListener('submit', formSubmitted);
 
@@ -36,12 +43,51 @@ function search(searchTerm) {
     );
 }
 
+
+let pictureList = [];
+let page = 0;
+
+
 function displayImages(images) {
-    images.forEach(image => {
-        const imageElement = document.createElement('img');
-        imageElement.src = image.urls.regular;
-        imageSection.appendChild(imageElement);
-    });
+  for (const i in images) {
+    const imageElement = document.createElement('img');
+    imageElement.src = images[i].urls.regular;
+    pictureList.push(imageElement);
+  };
+
+  for (let i = 0; i < page + 10; i++){
+    imageSection.appendChild(pictureList[i]);
+  }
 }
 
+next.addEventListener("click", () => {
+  page == pictureList.length - 10 ? (page = 0) : (page += 10);
+  imageSection.innerHTML = "";
+  for (let i = page; i < page + 10; i++){
+    imageSection.appendChild(pictureList[i]);
+  }
+});
 
+previous.addEventListener("click", () => {
+    page == 0 ? (page = pictureList.length - 10) : (page -= 10);
+    imageSection.innerHTML = "";
+    for (let i = page; i < page + 10; i++){
+      imageSection.appendChild(pictureList[i]);
+    }
+});
+
+first.addEventListener("click", () => {
+  page = 0;
+  imageSection.innerHTML = "";
+  for (let i = page; i < page + 10; i++){
+    imageSection.appendChild(pictureList[i]);
+  }
+});
+
+last.addEventListener("click", () => {
+  page = pictureList.length - 10;
+  imageSection.innerHTML = "";
+  for (let i = page; i < page + 10; i++){
+    imageSection.appendChild(pictureList[i]);
+  }
+});
