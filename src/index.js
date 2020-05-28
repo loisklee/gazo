@@ -35,10 +35,10 @@ function searchStart() {
 }
 
 function search(searchTerm) {
+  pictureList = [];
   let query = searchTerm;
   return client.photos.search({ query, per_page: 50 })  
         .then(photos => {
-          console.log(photos.photos);
             return photos.photos;
         }
     );
@@ -46,7 +46,6 @@ function search(searchTerm) {
 
 let pictureList = [];
 let page = 0;
-
 
 function displayImages(images) {
   console.log(images)
@@ -56,7 +55,9 @@ function displayImages(images) {
     pictureList.push(imageElement);
   };
 
-  for (let i = 0; i < page + 10; i++){
+  page == pictureList.length - 10 ? page = 0 : page += 10;
+  imageSection.innerHTML = "";
+  for (var i = page; i < page + 10; i++) {
     imageSection.appendChild(pictureList[i]);
   }
 }
@@ -67,6 +68,7 @@ next.addEventListener("click", () => {
   for (let i = page; i < page + 10; i++){
     imageSection.appendChild(pictureList[i]);
   }
+  console.log(pictureList)
 });
 
 previous.addEventListener("click", () => {
