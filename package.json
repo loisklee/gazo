@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "jw-paginate": "^1.0.4",
+    "pexels": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
