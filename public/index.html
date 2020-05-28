@@ -1,32 +1,41 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
-</head>
-<body>
-<!-- Add your site or application content here -->
-  <header id="header">
-    <h1>🍨 Vanilla JS Image Search</h1>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  </head>
 
-  <form>
-    <label for="searchTerm">Search Term</label>
-    <input type="text" id="searchTerm" name="searchTerm">
-    <button type="submit">Search</button>
-  </form>
+  <body>
+    <header id="header">
+      <h1>🍨 Vanilla JS Image Search 🍨</h1>
+    </header>
 
-  <img id="loadingImage" src="https://i.giphy.com/media/vrKUtJNMtB3Y4/giphy.webp">
+    <form>
+      <label for="searchTerm">Search Term</label>
+      <input type="text" id="searchTerm" name="searchTerm">
+      <button type="submit">Search</button>
+    </form>
 
-  <section class="grid">
-  </section>
+    <img id="loadingImage" src="https://i.giphy.com/media/vrKUtJNMtB3Y4/giphy.webp">
 
-  <script src="bundle.js"></script>
+    <div class="grid">
+    </div>
 
-</body>
+
+    <div class ="pagination">
+      <input type="button" class="first" value="first" />
+      <input type="button" class="previous" value="previous" />
+      <input type="button" class="next" value="next" />
+      <input type="button" class="last" value="last" />
+    </div>
+    
+
+    <script src="bundle.js"></script>
+
+  </body>
 </html>
