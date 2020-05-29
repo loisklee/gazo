@@ -8,45 +8,67 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header id="header">
-      <h1>🍨 Vanilla JS Image Search 🍨</h1>
+      <h1>gazō</h1>
+      <h5>IMAGE SEARCH</h4>
     </header>
 
-    <form>
-      <label for="searchTerm">Search Term</label>
-      <input type="text" id="searchTerm" name="searchTerm">
-      <button type="submit">Search</button>
-    </form>
+    <nav class = "topnav">
+      <form class="search-form">
+        <input type="search" value="" placeholder=" find photos of ..." class="search-input">
+        <button type="submit" class="search-button">
+          <svg class="submit-button">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+          </svg>
+      </form>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+        <symbol id="search" viewBox="0 0 32 32">
+          <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z" />
+        </symbol>
+      </svg>
 
-    <img id="loadingImage" src="https://i.giphy.com/media/vrKUtJNMtB3Y4/giphy.webp">
-
-    <div class="grid">
-    </div>
-
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="img01">
-      <div id="caption"></div>
-    </div>
-
-
-    <!-- Pagination Buttons -->
-    <div class ="pagination">
-      <input type="button" class="first" value="first" />
-      <input type="button" class="previous" value="previous" />
-      <input type="button" class="next" value="next" />
-      <input type="button" class="last" value="last" />
-    </div>
+    </nav>
     
-    <a href="https://www.pexels.com/api/documentation/?language=javascript#guidelines">
-      Photos provided by Pexels
-    </a> 
+    <section>
+      <img id="loadingImage" src="https://i.giphy.com/media/vrKUtJNMtB3Y4/giphy.webp">
 
+      <div class="grid">
+      </div>
+  
+  
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+  
+  
+      <!-- Pagination Buttons -->
+      <div class ="pagination">
+        <input type="button" class="first" value="first" />
+        <input type="button" class="previous" value="<" />
+        <input type="button" class="next" value=">" />
+        <input type="button" class="last" value="last" />
+      </div>
+      
+    </section>
+
+
+    <footer class = "foot">
+      <h5>
+        <a href="https://www.pexels.com/api/documentation/?language=javascript#guidelines">
+          (photos via Pexels API)
+        </a> 
+      </h5>
+
+    </footer>
     <script src="bundle.js"></script>
 
   </body>

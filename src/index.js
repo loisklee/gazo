@@ -8,7 +8,6 @@ const next = document.querySelector('.next');
 const previous = document.querySelector('.previous');
 const last = document.querySelector('.last');
 
-
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const loadingImage = document.querySelector('#loadingImage');
@@ -49,10 +48,10 @@ let pictureList = [];
 let page = 0;
 
 function displayImages(images) {
-  console.log(images)
   for (const i in images) {
     const imageElement = document.createElement('img');
     imageElement.src = images[i].src.large;
+    imageElement.style.borderRadius = "30px";
     imageElement.setAttribute('class', 'myImg');
     imageElement.alt = `Photographer: ${images[i].photographer}`;
     imageElement.id = images[i].id;
@@ -140,11 +139,6 @@ document.addEventListener('mouseover', function(event) {
     var e = document.getElementById(event.target.id);
       e.style.opacity = "0.7";
       e.style.cursor = "pointer";
-
-      // reset the color after a short delay
-      // setTimeout(function() {
-      //   e.style.opacity = "1.0";
-      // }, 500);
   }
 });
 
