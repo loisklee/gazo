@@ -1,5 +1,10 @@
-# Image Search App 
+# gazō 
 
+an image search app
+
+![Demo](demo/May-28-2020 19-14-15.gif)
+
+### Project Requirements
 [x] Using any image API of your choice, or API that returns content with images:
 
   [x] All images should be about a specific theme or based on a specific word

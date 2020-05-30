@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "webpack-dev-server & open http://localhost:9000/",
     "build": "webpack-cli",
     "start:dev": "NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +14,10 @@
     "pexels": "^1.0.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^2.0.0",
     "dotenv-webpack": "^1.8.0",
     "jest": "^26.0.1",
