@@ -2,7 +2,9 @@
 
 an image search app
 
-![Demo](demo/May-28-2020 19-14-15.gif)
+![Demo](https://media.giphy.com/media/VGV6bQXKKhunOsCHwn/giphy.gif)
+
+
 
 ### Project Requirements
 [x] Using any image API of your choice, or API that returns content with images:
