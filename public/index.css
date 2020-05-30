@@ -283,15 +283,13 @@ input[type="button"] {
 .button:hover,
 button:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="button"]:focus {
+input[type="button"]:hover {
   background-color: rgb(189, 212, 230);
   outline: 0; }
 
-
+  input[type="button"]{
+    outline: 0;
+  }
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 

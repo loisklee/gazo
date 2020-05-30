@@ -37,7 +37,7 @@ function searchStart() {
 function search(searchTerm) {
   pictureList = [];
   let query = searchTerm;
-  return client.photos.search({ query, per_page: 50 })  
+  return client.photos.search({ query, per_page: 80 })  
         .then(photos => {
             return photos.photos;
         }
@@ -74,7 +74,6 @@ next.addEventListener("click", () => {
   for (let i = page; i < page + 10; i++){
     imageSection.appendChild(pictureList[i]);
   }
-  console.log(pictureList)
 });
 
 previous.addEventListener("click", () => {
