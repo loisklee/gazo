@@ -5,6 +5,25 @@ an image search app
 ![Demo](https://media.giphy.com/media/VGV6bQXKKhunOsCHwn/giphy.gif)
 
 
+## Installation
+
+Clone the repo
+```
+https://github.com/loisklee/gazo.git
+```
+
+Open repo
+
+
+Create a .env file in the root directory and paste in the API key given in the email
+
+Install dependencies and run server
+```
+npm i & npm start
+```
+
+Open page in browser according to web address displayed in terminal (eg. https://localhost:9000)
+
 
 ### Project Requirements
 [x] Using any image API of your choice, or API that returns content with images:
@@ -20,7 +39,7 @@ an image search app
 ### Technical Constraints
 [x] use only html / css / vanilla js 
 
-[ ] `npm i && npm start` from its root directory
+[x] `npm i && npm start` from its root directory
 
 [x] take responsive design into consideration
 

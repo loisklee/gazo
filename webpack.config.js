@@ -2,8 +2,9 @@ var dotenv = require('dotenv').config({path: __dirname + '/.env'});
 const Dotenv = require('dotenv-webpack');
 
 
-const path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 process.env.CVA_PORT = process.env.CVA_PORT || 9000
@@ -39,9 +40,8 @@ const config = function (mode) {
         ]
         },
         output: {
-            path: path.resolve(__dirname, 'public/bundle/'),
             filename: 'bundle.js',
-            publicPath: '/',
+            path: path.resolve(__dirname, 'public/')
         },
         plugins: [
             new Dotenv(),
@@ -49,14 +49,15 @@ const config = function (mode) {
                 "process.env": dotenv.parsed
             })
         ],
+        devtool: 'source-map',
         devServer: {
             watchOptions: {
                 ignored: /node_modules/
             },
             contentBase: 'public',
             compress: true,
-            hot: true,
-            port: process.env.CVA_PORT
+            port: process.env.CVA_PORT,
+            watchContentBase: true
         }
     }
 
