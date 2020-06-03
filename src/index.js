@@ -12,8 +12,11 @@ const form = document.querySelector('form');
 const input = document.querySelector('input');
 const loadingImage = document.querySelector('#loadingImage');
 const imageSection = document.querySelector('.grid');
+const pagination = document.querySelector('.pagination');
 
-loadingImage.style.display = 'block';
+
+loadingImage.style.display = 'none';
+pagination.style.display = 'none'
 
 form.addEventListener('submit', formSubmitted);
 
@@ -32,6 +35,8 @@ function formSubmitted(event) {
 function searchStart() {
   loadingImage.style.display = '';
   imageSection.innerHTML = '';
+  pagination.style.display = ''
+
 }
 
 function search(searchTerm) {
@@ -118,7 +123,6 @@ document.addEventListener('click', function (event) {
       modalImg.src = img.src;    
       modalImg.alt = img.alt;
       captionText.innerHTML = img.alt;
-      
   }
 
 	if (event.target.matches('.close')) {
@@ -126,14 +130,12 @@ document.addEventListener('click', function (event) {
       // When the user clicks on <span> (x), close the modal
         modal.style.display = "none";
   }
-
 }, false);
 
 
 /* Hover */
 
 document.addEventListener('mouseover', function(event) {
-  // code from mouseover hover function goes here
 	if (event.target.matches('img.myImg')) {
     var e = document.getElementById(event.target.id);
       e.style.opacity = "0.7";
@@ -142,7 +144,6 @@ document.addEventListener('mouseover', function(event) {
 });
 
 document.addEventListener('mouseout', function(event) {
-  // code from mouseover hover function goes here
 	if (event.target.matches('img.myImg')) {
     var e = document.getElementById(event.target.id);
       e.style.opacity = "1.0";

@@ -15,8 +15,12 @@ a:hover {
 }
 
 
-.foot{
+#foot{
   text-align: right;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 2.5rem;            /* Footer height */
 }
 /* search bar */
 
@@ -224,7 +228,7 @@ html {
 
 body {
   width: 80%;
-  margin: 2em auto 0 auto;
+  margin: 5em auto 0 auto;
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;

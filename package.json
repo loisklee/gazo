@@ -6,11 +6,10 @@
     "start": "webpack-dev-server & open http://localhost:9000/",
     "build": "webpack-cli",
     "start:dev": "NODE_ENV=development webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "jw-paginate": "^1.0.4",
     "pexels": "^1.0.1"
   },
   "devDependencies": {
