@@ -2,7 +2,7 @@
 
 an image search app
 
-![Demo](https://media.giphy.com/media/VGV6bQXKKhunOsCHwn/giphy.gif)
+![Demo](https://media3.giphy.com/media/kDfeXFPLJtyvglQMbr/giphy.gif)
 
 
 ## Installation
