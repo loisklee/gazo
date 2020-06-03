@@ -3,16 +3,14 @@ import { createClient } from 'pexels';
 const client = createClient(process.env.API_KEY);
 // please see email for contents of .env file!
 
-const first = document.querySelector('.first');
-const next = document.querySelector('.next');
-const previous = document.querySelector('.previous');
-const last = document.querySelector('.last');
+
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const loadingImage = document.querySelector('#loadingImage');
 const imageSection = document.querySelector('.grid');
 const pagination = document.querySelector('.pagination');
+const header = document.querySelector('#header');
 
 
 loadingImage.style.display = 'none';
@@ -36,7 +34,7 @@ function searchStart() {
   loadingImage.style.display = '';
   imageSection.innerHTML = '';
   pagination.style.display = ''
-
+  header.style.marginTop = "0";
 }
 
 function search(searchTerm) {
@@ -72,38 +70,58 @@ function displayImages(images) {
 
 /* PAGINATION */
 
-
-next.addEventListener("click", () => {
-  page == pictureList.length - 10 ? (page = 0) : (page += 10);
-  imageSection.innerHTML = "";
-  for (let i = page; i < page + 10; i++){
-    imageSection.appendChild(pictureList[i]);
+document.addEventListener('click', function (event) {
+	if (event.target.matches('.first')) {
+    page = 0;
+    imageSection.innerHTML = "";
+    for (let i = page; i < page + 10; i++){
+      imageSection.appendChild(pictureList[i]);
+    }
   }
-});
-
-previous.addEventListener("click", () => {
+	if (event.target.matches('.next')) {
+    page == pictureList.length - 10 ? (page = 0) : (page += 10);
+    imageSection.innerHTML = "";
+    for (let i = page; i < page + 10; i++){
+      imageSection.appendChild(pictureList[i]);
+    }
+  }
+  if (event.target.matches('.previous')) {
     page == 0 ? (page = pictureList.length - 10) : (page -= 10);
     imageSection.innerHTML = "";
     for (let i = page; i < page + 10; i++){
       imageSection.appendChild(pictureList[i]);
     }
-});
-
-first.addEventListener("click", () => {
-  page = 0;
-  imageSection.innerHTML = "";
-  for (let i = page; i < page + 10; i++){
-    imageSection.appendChild(pictureList[i]);
   }
-});
-
-last.addEventListener("click", () => {
-  page = pictureList.length - 10;
-  imageSection.innerHTML = "";
-  for (let i = page; i < page + 10; i++){
-    imageSection.appendChild(pictureList[i]);
+  if (event.target.matches('.last')) {
+    page = pictureList.length - 10;
+    imageSection.innerHTML = "";
+    for (let i = page; i < page + 10; i++){
+      imageSection.appendChild(pictureList[i]);
+    }
   }
-});
+}, false);
+
+
+// const first = document.querySelector('.first');
+// const next = document.querySelector('.next');
+// const previous = document.querySelector('.previous');
+// const last = document.querySelector('.last');
+
+// next.addEventListener("click", () => {
+
+// });
+
+// previous.addEventListener("click", () => {
+
+// });
+
+// first.addEventListener("click", () => {
+
+// });
+
+// last.addEventListener("click", () => {
+
+// });
 
 /* MODAL */
 
