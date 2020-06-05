@@ -102,27 +102,6 @@ document.addEventListener('click', function (event) {
 }, false);
 
 
-// const first = document.querySelector('.first');
-// const next = document.querySelector('.next');
-// const previous = document.querySelector('.previous');
-// const last = document.querySelector('.last');
-
-// next.addEventListener("click", () => {
-
-// });
-
-// previous.addEventListener("click", () => {
-
-// });
-
-// first.addEventListener("click", () => {
-
-// });
-
-// last.addEventListener("click", () => {
-
-// });
-
 /* MODAL */
 
 // Get the modal

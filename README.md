@@ -1,6 +1,6 @@
 # gazō 
 
-an image search app
+an image search frontend, using Pexels API
 
 ![Demo](https://media3.giphy.com/media/kDfeXFPLJtyvglQMbr/giphy.gif)
 
